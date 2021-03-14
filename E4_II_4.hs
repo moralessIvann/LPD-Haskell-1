@@ -3,7 +3,7 @@
     Repositorio: https://github.com/Medina1402/LPD-Haskell 
     Fecha: 12-03-21
     
-    Descripcion: *** Aprocimacion de arcsin ***
+    Descripcion: *** Aproximacion de arcsin ***
         Mediante la seria de Maclaurin realizaremos una aproximacion de arcsin
         >>> Ejemplo:
             arcsin(-0.57)
