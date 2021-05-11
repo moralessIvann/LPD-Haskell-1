@@ -13,6 +13,6 @@
 module E4_I_5 where
 
 fibonacci :: (Num a, Enum a, Ord a) => a -> [a]
-fibonacci x = do
-    let fibo' a = if a < 2 then a else fibo' (a-1) + fibo' (a-2)
-    [ fibo' a | a <- [1..x]]
+fibonacci x = [ fibo' a | a <- [1..x]]
+                where fibo' a = if a < 2 then a else fibo' (a-1) + fibo' (a-2)
+    

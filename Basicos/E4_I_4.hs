@@ -10,6 +10,6 @@
 
 module E4_I_4 where
 
-    factorial :: Int -> Int 
+    factorial :: Integer -> Integer
     factorial 0 = 1
     factorial n = n * factorial(n-1)

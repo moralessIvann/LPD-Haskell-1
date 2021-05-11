@@ -1,4 +1,4 @@
-module ArbolGenealogico where
+module Arbol where
 
 data Gender = F | M deriving Show
 data Tree = Empty | People { 

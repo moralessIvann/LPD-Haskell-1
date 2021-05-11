@@ -19,5 +19,5 @@ numFriends :: Integral a => a -> a -> Bool
 numFriends a b
     | a <= 1 || b <= 1 = False
     | otherwise = do
-        let sumatoria n = sum (init [ x | x <- [1..n], (mod n x) == 0 ])
         (sumatoria a == b) && (sumatoria b == a)
+            where sumatoria n = sum (init [ x | x <- [1..n], (mod n x) == 0 ])
