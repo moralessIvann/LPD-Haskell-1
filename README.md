@@ -16,3 +16,6 @@ Ejercicios basicos para el dominio de estructuras y flujo de control
 4. [E4_II_4 - Aproximacion de arcsin con serie de Maclaurin](https://github.com/Medina1402/LPD-Haskell/blob/main/E4_II_4.hs)
 5. [E4_II_5 - Raices de ecuaciones por metodo de Biseccion](https://github.com/Medina1402/LPD-Haskell/blob/main/E4_II_5.hs)
 6. [E4_II_5 - Maximo Comun Divisor con algoritmo Euclideo](https://github.com/Medina1402/LPD-Haskell/blob/main/E4_II_6.hs)
+
+## Arbol Genealogico: Familia Weasley
+![./Weasley.png](familia Weasley)
