@@ -10,10 +10,10 @@ data Tree = Empty | People {
 } deriving Show
 
 treeOrigin = [People {
-    gender = F,
-    name = "Molly Prewett",
-    partner = "Arthur",
-    genPartner = M,
+    gender = M,
+    name = "Arthur",
+    partner = "Molly Prewett",
+    genPartner = F,
     childs = [
         People {
             gender = M,
