@@ -3,13 +3,13 @@ module Arbol where
 data Gender = F | M deriving Show
 data Tree = Empty | People { 
     gender :: Gender, 
-    name :: String, 
+    name :: String,
     partner :: String,
     genPartner :: Gender,
     childs :: [Tree]
 } deriving Show
 
-treeOrigin = People {
+treeOrigin = [People {
     gender = F,
     name = "Molly Prewett",
     partner = "Arthur",
@@ -148,4 +148,4 @@ treeOrigin = People {
             ]
         }
     ]
-}
+}]
