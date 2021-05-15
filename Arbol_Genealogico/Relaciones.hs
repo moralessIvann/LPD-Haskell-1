@@ -1,3 +1,11 @@
+{-
+    Creador: Abraham Medina Carrillo
+    Repositorio: https://github.com/Medina1402/LPD-Haskell 
+    Fecha: 14-05-21
+    
+    Descripcion: ***
+-}
+
 module Relaciones where
 
 import Arbol
@@ -6,12 +14,12 @@ import Arbol
 fathers [] _ _ _ _ filename = appendFile filename ""
 fathers (People{gender=g, name=n, partner=p, genPartner=gp, childs=c}:xs) namePerson dad mom gender filename
     | namePerson == n = do
-        if show(gender) == "F" then 
+        if gender == F then 
             appendFile filename mom 
         else appendFile filename dad
     | otherwise = do
         fathers xs namePerson dad mom gender filename
-        if show(g) == "F" then
+        if g == F then
             fathers c namePerson p n gender filename
         else fathers c namePerson n p gender filename
 
@@ -36,16 +44,28 @@ childrens (People{gender=g, name=n, partner=p, genPartner=gp, childs=c}:xs) name
         childrens xs namePerson child filename
         childrens c namePerson child filename
 
-------------------------------------------------------------------------------------------
 
-abuelos child g g2 = do
-    writeFile "temp/abuelos.log" ""
-    p <- padres child g
-    fathers treeOrigin p "" "" g2 "temp/abuelos.log"
-    readFile "temp/abuelos.log"
+children [] _ _ filename = appendFile filename ""
+children (People{gender=g, name=n, partner=p, genPartner=gp, childs=c}:xs) namePerson gen filename
+    | namePerson == n || namePerson == p = do
+        let x = [if show(gen)==show(ga) then na else "" | People{gender=ga, name=na, partner=_, genPartner=_, childs=_} <- c]
+        let x2 = filter (\x -> length x > 0) (x)
+        if length(x2) > 0 then appendFile filename (head x2) else appendFile filename ""
+    | otherwise = do
+        children xs namePerson gen filename
+        children c namePerson gen filename
 
 
-padres child p = do
-    writeFile "temp/padres.log" ""
-    fathers treeOrigin child "" "" p "temp/padres.log"
-    readFile "temp/padres.log"
+-- Busqueda de hijos
+writeBrothers cx filename ch gen = do
+    let x = [if (not(na==ch) && gen==ga) then na else "" | People{gender=ga, name=na, partner=p, genPartner=gp, childs=c} <- cx]
+    let x2 = filter (\x -> length x > 0) (x)
+    if length(x2) > 0 then appendFile filename (head x2) else appendFile filename ""
+
+--
+brother [] _ _ _ filename = appendFile filename ""
+brother (People{gender=g, name=n, partner=p, genPartner=gp, childs=c}:xs) namePerson child gen filename
+    | namePerson == n || namePerson == p = writeBrothers c filename child gen
+    | otherwise = do
+        brother xs namePerson child gen filename
+        brother c namePerson child gen filename

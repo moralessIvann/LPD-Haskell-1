@@ -1,6 +1,14 @@
+{-
+    Creador: Abraham Medina Carrillo
+    Repositorio: https://github.com/Medina1402/LPD-Haskell 
+    Fecha: 14-05-21
+    
+    Descripcion: ***
+-}
+
 module Arbol where
 
-data Gender = F | M deriving Show
+data Gender = F | M deriving (Show, Eq)
 data Tree = Empty | People { 
     gender :: Gender, 
     name :: String,
