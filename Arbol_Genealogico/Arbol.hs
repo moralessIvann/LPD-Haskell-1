@@ -107,7 +107,7 @@ treeOrigin = [People {
         People {
             gender = M,
             name = "Percy",
-            partner = "Andrey",
+            partner = "Audrey",
             genPartner = F,
             childs = [
                 People {
