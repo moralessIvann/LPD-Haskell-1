@@ -21,3 +21,6 @@ Ejercicios basicos para el dominio de estructuras y flujo de control
 [Mostrar](https://github.com/Medina1402/LPD-Haskell/blob/main/Arbol_Genealogico/Arbol.hs)
 
 ![familia Weasley](./Arbol_Genealogico/Weasley.png)
+
+## Trabajo Final: Tic Tac Toe
+[Mostrar](https://github.com/Medina1402/LPD-Haskell/blob/main/Tic_Tac_Toe/tictactoe.hs)
